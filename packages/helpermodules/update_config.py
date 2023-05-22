@@ -19,6 +19,7 @@ from control import counter_all
 from control import ev
 from modules.common.configurable_vehicle import IntervalConfig
 from modules.display_themes.cards.config import CardsDisplayTheme
+from modules.web_themes.standard_legacy.config import StandardLegacyWebTheme
 
 log = logging.getLogger(__name__)
 
@@ -137,6 +138,7 @@ class UpdateConfig:
         "^openWB/general/ripple_control_receiver/configured$",
         "^openWB/general/ripple_control_receiver/r1_active$",
         "^openWB/general/ripple_control_receiver/r2_active$",
+        "^openWB/general/web_theme$",
         "^openWB/general/chargemode_config/unbalanced_load_limit$",
         "^openWB/general/chargemode_config/unbalanced_load$",
         "^openWB/general/chargemode_config/pv_charging/feed_in_yield$",
@@ -397,6 +399,7 @@ class UpdateConfig:
         ("openWB/general/price_kwh", 0.3),
         ("openWB/general/range_unit", "km"),
         ("openWB/general/ripple_control_receiver/configured", False),
+        ("openWB/general/web_theme", dataclass_utils.asdict(StandardLegacyWebTheme())),
         ("openWB/graph/config/duration", 120),
         ("openWB/optional/et/active", False),
         ("openWB/optional/et/config/max_price", 0),
